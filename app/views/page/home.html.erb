@@ -1,4 +1,33 @@
  <div class="container">
-  <h1>Page#home</h1>
-  <p>Find me in app/views/page/home.html.erb</p>
+
+
+  <div class="jumbotron text-center">
+    <div class="container">
+      <h1>Move and Groove </h1>
+      <p class="lead">
+      Go for a run, walk, hike, or any activity really! You'll get a clear view of your training in real time with our Move and Groove,
+      </p>
+      <p class="lead">
+     Get Start
+      </p>
+      <p>
+        <% if user_signed_in? %>
+                      
+            <%= link_to current_user.full_name, root_path, class: 'nav-link' %>
+          
+          
+            <%= link_to "Log Out", destroy_user_session_path, class: 'btn btn-primary mr-1', method: :delete %>
+          
+        <% else %>
+          
+            <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary mr-1' %>
+          
+          
+            <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-primary' %>
+                      
+        <% end %>
+      </p>
+    </div>
+  </div>
+
   </div>

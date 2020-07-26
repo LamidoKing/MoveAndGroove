@@ -1,3 +1,43 @@
-// Place all the styles related to the Page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+body {
+  height: 100%;
+  padding-top: 60px;
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+
+
+
+.jumbotron {
+    margin-top: 50px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: rgba(250, 248, 248, 0.692);
+  }
+  @media (min-width: 768px) {
+    .jumbotron {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  .jumbotron p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .jumbotron h1 {
+    font-weight: 300;
+  }
+  
+  .jumbotron .container {
+    max-width: 40rem;
+  }
+
+
+  .jumbotron h1
+p {
+  font-weight: 300;
+  text-align: center;
+  color: black;
+}
