@@ -3,30 +3,42 @@
 
   <div class="jumbotron text-center">
     <div class="container">
-      <h1>Move and Groove </h1>
-      <p class="lead">
-      Go for a run, walk, hike, or any activity really! You'll get a clear view of your training in real time with our Move and Groove,
-      </p>
-      <p class="lead">
-     Get Start
-      </p>
-      <p>
-        <% if user_signed_in? %>
-                      
-            <%= link_to current_user.full_name, root_path, class: 'nav-link' %>
-          
-          
-            <%= link_to "Log Out", destroy_user_session_path, class: 'btn btn-primary mr-1', method: :delete %>
-          
-        <% else %>
-          
-            <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary mr-1' %>
-          
-          
-            <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-primary' %>
-                      
-        <% end %>
-      </p>
+      <% if user_signed_in? %>
+        <h1>Welcome </h1>
+        <h1><%= current_user.full_name %></h1>
+
+         <p class="lead">Your have</p>
+
+        <h1><%= current_user.activities.length.to_s%></h1>
+        
+        <p class="lead">
+          <% if current_user.activities.length > 1 %>
+          Activities
+          <% else %>
+          Activity
+          <% end %>
+        </p>
+
+        <%= link_to 'New Activity', new_activity_path, class: "btn btn-primary ml-auto" %>
+        
+
+      <% else %>
+        <h1>Move and Groove </h1>
+        <p class="lead">
+          Go for a run, walk, hike, or any activity really! You'll get a clear view of your training in real time with our Move and Groove,
+        </p>
+        <p class="lead">
+          Get Start
+        </p>
+        <p>
+
+          <%= link_to "Sign In", new_user_session_path, class: 'btn btn-primary mr-1' %>
+
+          <%= link_to "Create an Account", new_user_registration_path, class: 'btn btn-primary' %>
+
+        </p>
+      <% end %>
+      
     </div>
   </div>
 

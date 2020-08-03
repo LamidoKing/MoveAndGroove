@@ -1,0 +1,59 @@
+<%= form_with(model: activity, local: true) do |f| %>
+  <% if activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(activity.errors.count, "error") %> prohibited this activity from being saved:</h2>
+
+      <ul>
+        <% activity.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="container-fluid register">
+  <div class="row">
+
+      <div class="col new-activity">
+          
+          <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <h3 class="register-heading"><%= form_name %></h3>
+                        <div class="row register-form">
+
+                          <div class="form-signin">
+                            <div class="col input-group">
+                              <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon3">Name</span>
+                              </div>
+                              <%= f.label :name, class:"sr-only" %>
+                              <%= f.select :name, Activity.names.keys, placeholder:"Name", class: "form-control" %>
+                            </div>
+                            <div class="col input-group my-4">
+                              <%= f.label :duration, class:"sr-only" %>
+                              <%= f.number_field :duration,  class: "form-control", placeholder:"Duration"%>
+                              <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon3">Minute</span>
+                              </div>
+                            </div>
+                            <div class="col my-4">
+                              <%= f.label :date, class:"sr-only" %>
+                              <%= f.date_field :date,  class: "form-control", placeholder:"date"%>
+                            </div>
+                              
+                              <%= f.submit type, class: "btn btn-lg btn-primary btnRegister" %>
+
+                          </div>
+                          
+                        </div>
+              </div>
+
+              
+ 
+          </div>
+      </div>
+  </div>
+
+</div>
+
+
+<% end %>

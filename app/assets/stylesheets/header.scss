@@ -44,3 +44,30 @@
   text-transform: capitalize;
   font-weight: 300;
 }
+
+/*footer*/
+
+footer { width:100%; background: -webkit-linear-gradient(left, #3931af, #00c6ff); padding:10px 0px 25px 0px ;}
+
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+
+.footer_ul2_amrc li i { margin-top:5px;}
+
+
+.foote-botton {
+	list-style-type:none;
+	padding:0px;
+	display:table;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	
+}
+.foote-botton li { display:inline;
+}
+.foote-botton li a { color: white; margin:0 12px;}
+
+.footer-icon{
+	color:white;
+}

@@ -13,23 +13,31 @@
 
     <header>
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand navbar-header" href="#">Move and Groove </a>
+            <a class="navbar-brand navbar-header" href="#">
+              <i class="fa fa-running fa-1x mr-3"></i>
+              Move and Groove
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active ml-2">
+                  <li class="nav-item  ml-2">
                     <%= link_to "Home", root_path, class: "nav-link"%> 
                   </li>
+                  <% if user_signed_in? %>
+                  <li class="nav-item ml-2">
+                    <%= link_to "Activities", activities_path, class: "nav-link"%> 
+                  </li>
+                  <% end %>
                 </ul>
 
                 <ul class="navbar-nav ">
                   
                     <% if user_signed_in? %>
                       <li class="nav-item">
-                        <%= link_to current_user.full_name, root_path, class: 'nav-link name' %>
+                        <%= link_to current_user.full_name, root_path, class: 'nav-link name text-dark' %>
                       </li>
                       <li class="nav-item">
                         <%= link_to "Log Out", destroy_user_session_path, class: 'btn btn-primary mr-1', method: :delete %>
@@ -50,6 +58,39 @@
     <main>
     <%= yield %>
     </main>
+    <footer>
+<nav class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container">
+        <ul class="foote-botton">
+          <li>
+              <%= link_to "Home", root_path, class: "footer-links"%>
+          </li>
+          <% if user_signed_in? %>
+          <li >
+            <%= link_to "Activities", activities_path, class: "footer-links"%> 
+          </li>
+          <% end %>
+        </ul>
+        <ul class="foote-botton">
+          <li>
+              <i class="fa fa-running footer-icon"></i>
+          </li>
+          
+        </ul>
+        <% if user_signed_in? %>
+        <ul class="foote-botton">
+          
+          <li >
+           <%= link_to 'New Activity', new_activity_path, class: "btn btn-primary ml-auto" %>
+          </li>
+          
+        </ul>
+        <% end %>
 
+
+      </div>
+      
+</nav>
+</footer>
   </body>
 </html>

@@ -1,0 +1,18 @@
+<div class="container">
+ <div class="jumbotron text-center">
+    <div class="container">
+      <h1><span>Name:</span> <%= @activity.name.split('_').map(&:capitalize).join(' ')%></h1>
+      <p class="lead">
+        <h1><span>Duration:</span> <%= @activity.duration%></h1>
+      </p>
+      <p class="lead">
+      <h1><span>Date:</span> <%= @activity.date%></h1>
+      </p>
+      <%= link_to 'Edit', edit_activity_path(@activity), class: "btn btn-primary"%>
+      <%= link_to 'Delete', @activity, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-primary"%>
+      <br/>
+      <%= link_to 'Back', activities_path, class: "btn btn-primary my-2" %>
+    </div>
+  </div>
+</div>
+
